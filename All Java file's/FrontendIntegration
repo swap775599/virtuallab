@@ -1,0 +1,27 @@
+Front-End Integration
+Make sure the HTML forms in login.jsp and class.jsp use the correct action URLs that map to the endpoints in your LogicController. For example:
+
+-------------------------
+
+For the login form:
+html
+Copy code
+<form method="post" action="/login">
+    <input type="hidden" name="role" value="student">
+    <input type="text" name="userId" placeholder="Student ID" required /> <br>
+    <input type="password" name="password" placeholder="Password" required /> <br>
+    <button type="submit">Login as Student</button>
+</form>
+
+------------------------
+
+
+For the comment form:
+html
+Copy code
+<form method="post" action="/postComment">
+    <input type="hidden" name="lectureId" value="<%= lectureId %>">
+    <input type="text" name="userName" placeholder="Your Name" required>
+    <textarea name="comment" placeholder="Your Comment" required></textarea>
+    <button type="submit">Post Comment</button>
+</form>
